@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.web1992.mybatiss.dal.dao.UserDao">
 
+    <!-- mapper *. xml 文件需要通过 maven 插件复制到 classes 目录下面，才能被找到 -->
     <resultMap id="BaseResultMap" type="cn.web1992.mybatiss.dal.domain.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="BIGINT" property="name"/>
