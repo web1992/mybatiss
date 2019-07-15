@@ -15,3 +15,19 @@ docker exec -it web1992_mysql /bin/bash
 
 mysql -u root -p
 ```
+
+## docker 
+
+```sh
+
+# 运行中的 docker
+docker images ls
+
+# 所有的 docker
+docker container ls --all
+
+docker stop 0039c4b71df5
+
+docker start 0039c4b71df5
+
+```
