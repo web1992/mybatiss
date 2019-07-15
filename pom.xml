@@ -21,10 +21,11 @@
         <!-- 数据库连接池配置 -->
         <druid.version>1.0.18</druid.version>
         <c3p0.version>0.9.2.1</c3p0.version>
+        <!-- 8.0.16 caching_sha2_password -->
         <mysql.version>5.1.22</mysql.version>
         <mybatis.version>3.1.0</mybatis.version>
         <cglib.version>2.2.2</cglib.version>
-        <!-- mybatis-spring 版本 -->
+        <!-- mybatis-config.spring 版本 -->
         <mybatis.spring.version>1.2.0</mybatis.spring.version>
     </properties>
 
@@ -33,7 +34,7 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
-                <!-- if you use spring boot,make sure spring version was same -->
+                <!-- if you use config.spring boot,make sure config.spring version was same -->
                 <!--<version>4.3.21.RELEASE</version>-->
                 <version>5.0.9.RELEASE</version>
                 <type>pom</type>
@@ -140,13 +141,62 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
         <!-- DB end -->
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- test end -->
 
     </dependencies>
 
 
     <build>
         <finalName>mybatiss</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>config/spring/*.xml</include>
+                    <include>logback.xml</include>
+                    <include>config/mybatis/**.xml</include>
+                    <include>config/props/**.properties</include>
+                    <include>META-INF/**</include>
+                </includes>
+            </resource>
+            <!-- 将mybatis dao的xml配置复制到classes 目录 -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+
+        </resources>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

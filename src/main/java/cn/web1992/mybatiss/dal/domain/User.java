@@ -1,4 +1,4 @@
-package cn.web1992.mybatiss.service;
+package cn.web1992.mybatiss.dal.domain;
 
 import java.util.Date;
 
@@ -30,5 +30,14 @@ public class User {
 
     public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthDay=" + birthDay +
+                '}';
     }
 }

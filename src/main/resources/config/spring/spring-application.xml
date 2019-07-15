@@ -11,4 +11,5 @@
     <context:component-scan base-package="cn.web1992"/>
     <!-- 数据库配置 -->
     <import resource="spring-db.xml"/>
+    <import resource="spring-props.xml"/>
 </beans>

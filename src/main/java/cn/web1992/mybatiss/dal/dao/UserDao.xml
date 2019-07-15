@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.web1992.mybatiss.dal.dao.UserDao">
+
+    <resultMap id="BaseResultMap" type="cn.web1992.mybatiss.dal.domain.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="BIGINT" property="name"/>
+        <result column="birth_day" jdbcType="BIGINT" property="birthDay"/>
+
+    </resultMap>
+    <insert id="add">
+        insert into t_user (name,birth_day) values(#{name},#{birthDay})
+    </insert>
+
+    <select id="get" resultType="cn.web1992.mybatiss.dal.domain.User">
+        select * from t_user where id =#{id};
+    </select>
+
+    <update id="update" parameterType="cn.web1992.mybatiss.dal.domain.User">
+        update  t_user set `name`=#{name},birth_day=#{birthDay} where id=#{id};
+    </update>
+
+</mapper>

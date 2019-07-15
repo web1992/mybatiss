@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 加载配置文件 -->
+   <!-- <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          lazy-init="false">
+        <property name="locations">
+            <list>
+                <value>classpath:config/props/application.properties</value>
+            </list>
+        </property>
+        &lt;!&ndash; 找不到以上配置不会报错 &ndash;&gt;
+        &lt;!&ndash; <property name="ignoreResourceNotFound" value="true"/>&ndash;&gt;
+        &lt;!&ndash; 忽略不可解析的配置文件 &ndash;&gt;
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>-->
+
+</beans>
