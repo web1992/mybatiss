@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 日志级别 -->
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
+
+    <!-- 指定某一个包或者某一个类的打印级别以及是否传入root进行打印 -->
+    <!-- addtivity:是否向上级loger传递打印信息。默认是true。-->
+    <!-- <loger>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger。-->
+    <!-- name:用来指定受此loger约束的某一个包或者具体的某一个类。-->
+    <!-- level:
+            用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。
+            如果未设置此属性，那么当前loger将会继承上级的级别。-->
+    <!-- 为所有开头为 cn.web1992.mybatiss.dal.dao 的类打印sql语句 -->
+    <logger name="cn.web1992.mybatiss.dal.dao" level="DEBUG" additivity="false">
+        <appender-ref ref="console" />
+    </logger>
+</configuration>
