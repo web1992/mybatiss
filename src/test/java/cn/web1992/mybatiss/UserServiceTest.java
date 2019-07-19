@@ -15,7 +15,13 @@ public class UserServiceTest extends AbstractTest {
      */
     @Test
     public void getTest(){
-        User user = userService.queryUser(1L);
+        User user = userService.queryUser("u1");
+        System.out.println(user);
+
+        // user.setName("test2");
+        // userService.updateUser(user);
+
+        user = userService.queryUser("u1");
         System.out.println(user);
     }
 }

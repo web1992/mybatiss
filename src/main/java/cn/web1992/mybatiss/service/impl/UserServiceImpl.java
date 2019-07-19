@@ -4,7 +4,6 @@ import cn.web1992.mybatiss.dal.dao.UserDao;
 import cn.web1992.mybatiss.dal.domain.User;
 import cn.web1992.mybatiss.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +18,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryUser(Long id) {
+    public int updateUser(User user) {
+        return userDao.update(user);
+    }
+
+    @Override
+    public User queryUser(String id) {
         return userDao.get(id);
     }
 }

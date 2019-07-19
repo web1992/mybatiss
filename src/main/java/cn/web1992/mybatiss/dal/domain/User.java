@@ -1,20 +1,10 @@
 package cn.web1992.mybatiss.dal.domain;
 
-import java.util.Date;
 
 public class User {
 
-    private Long id;
+    private String id;
     private String name;
-    private Date birthDay;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -24,20 +14,19 @@ public class User {
         this.name = name;
     }
 
-    public Date getBirthDay() {
-        return birthDay;
+    public String getId() {
+        return id;
     }
 
-    public void setBirthDay(Date birthDay) {
-        this.birthDay = birthDay;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", birthDay=" + birthDay +
                 '}';
     }
 }

@@ -6,6 +6,8 @@ public interface UserService {
 
     int createUser(User user);
 
-    User queryUser(Long id);
+    int updateUser(User user);
+
+    User queryUser(String id);
 
 }
