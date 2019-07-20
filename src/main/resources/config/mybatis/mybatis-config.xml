@@ -5,6 +5,9 @@
         <setting name="lazyLoadingEnabled" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+    <plugins>
+        <plugin  interceptor="cn.web1992.mybatiss.intercepror.ExecutorInterceptor"/>
+    </plugins>
     <mappers>
         <!--<mapper class=""/>-->
     </mappers>
