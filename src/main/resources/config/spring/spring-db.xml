@@ -17,25 +17,15 @@
       http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <!-- 加载配置文件 -->
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          lazy-init="false">
-        <property name="locations">
-            <list>
-                <value>classpath:config/props/application.properties</value>
-            </list>
-        </property>
-        <!-- 找不到以上配置不会报错 -->
-        <!-- <property name="ignoreResourceNotFound" value="true"/>-->
-        <!-- 忽略不可解析的配置文件 -->
-        <property name="ignoreUnresolvablePlaceholders" value="true"/>
-    </bean>
-
     <!-- 注解事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 
+    <!-- 使用Mysql -->
+    <!-- <import resource="spring-datasource.xml"/> -->
+
     <!-- in-memory database and a datasource -->
+    <!-- hsqldb -->
     <jdbc:embedded-database id="dataSource">
         <jdbc:script location="classpath*:/config/db/database-schema.sql"/>
         <jdbc:script location="classpath*:/config/db/database-test-data.sql"/>
