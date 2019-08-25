@@ -7,7 +7,7 @@
         <id column="id"  property="id"/>
         <result column="name" property="name"/>
     </resultMap>
-    <insert id="add">
+    <insert id="add" keyColumn="id" keyProperty="id">
         insert into t_user (id,name) values(#{id},#{name})
     </insert>
 
