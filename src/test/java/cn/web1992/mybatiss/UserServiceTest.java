@@ -18,10 +18,15 @@ public class UserServiceTest extends AbstractTest {
         User user = userService.queryUser("u1");
         System.out.println(user);
 
+        User user1 = new User();
+        user1.setName("6666 name");
+        user1.setId("u6x");
+        userService.createUser(user1);
+
         // user.setName("test2");
         // userService.updateUser(user);
 
-        user = userService.queryUser("u1");
+        user = userService.queryUser("u6x");
         System.out.println(user);
     }
 }
