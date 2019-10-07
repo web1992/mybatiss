@@ -11,7 +11,7 @@
 
 ```sh
 
-docker run -di --name web1992_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql:5.7
+docker run -di --name web1992_mysql -p 3306:3306 -v /Users/zl/Documents/dev/dockers/mysql/conf:/etc/mysql/conf.d -v /Users/zl/Documents/dev/dockers/mysql/data:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=root mysql:5.7
 
 docker exec -it web1992_mysql /bin/bash
 
