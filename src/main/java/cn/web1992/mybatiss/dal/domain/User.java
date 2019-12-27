@@ -1,6 +1,8 @@
 package cn.web1992.mybatiss.dal.domain;
 
-
+/**
+ * @author web1992
+ */
 public class User {
 
     private String id;

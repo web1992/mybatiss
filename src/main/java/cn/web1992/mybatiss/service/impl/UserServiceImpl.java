@@ -6,6 +6,9 @@ import cn.web1992.mybatiss.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author web1992
+ */
 @Service
 public class UserServiceImpl implements UserService {
 

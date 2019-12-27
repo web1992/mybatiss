@@ -26,6 +26,7 @@ import java.util.Properties;
  * The Executor is not accessible from DefaultSqlSession, so it is much easier to use an Interceptor
  * rather than subclass a new SqlSessionFactory, etc. Also, there is the potential to change the
  * default MyBatis behavior, which could change the test results.
+ * @author web1992
  */
 @Intercepts({
     @Signature(type = Executor.class, method = "commit", args = { boolean.class }),
