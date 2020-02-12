@@ -6,6 +6,7 @@ import cn.web1992.mybatiss.datasource.UseDataSource;
 import cn.web1992.mybatiss.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author web1992
@@ -33,9 +34,17 @@ public class UserServiceImpl implements UserService {
         return userDao.update(user);
     }
 
+    /**
+     * 默认数据源是 dataSourceMySQL
+     * id='u1' 时，User 不为空，说明数据源切换OK
+     *
+     * @param id
+     * @return
+     */
     @Override
-//    @UseDataSource("embeddedDatabase")
-    @UseDataSource("mysqlDatabase")
+    @UseDataSource("embeddedDatabase")
+//    @UseDataSource("dataSourceMySQL")
+    @Transactional(rollbackFor = Exception.class)
     public User queryUser(String id) {
         return userDao.get(id);
     }
