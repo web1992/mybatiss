@@ -9,7 +9,7 @@
 
     <!-- in-memory database and a datasource -->
     <!-- hsqldb -->
-    <jdbc:embedded-database id="dataSource">
+    <jdbc:embedded-database id="embeddedDataSource">
         <jdbc:script location="classpath*:/config/db/database-schema.sql"/>
         <jdbc:script location="classpath*:/config/db/database-test-data.sql"/>
     </jdbc:embedded-database>
