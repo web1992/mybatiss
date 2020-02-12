@@ -16,6 +16,7 @@
 package cn.web1992.mybatiss.intercepror;
 
 import org.apache.ibatis.executor.Executor;
+import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.plugin.*;
 
 import java.util.Properties;
@@ -29,6 +30,7 @@ import java.util.Properties;
  * @author web1992
  */
 @Intercepts({
+    @Signature(type = Executor.class, method = "update", args = { MappedStatement.class ,Object.class}),
     @Signature(type = Executor.class, method = "commit", args = { boolean.class }),
     @Signature(type = Executor.class, method = "rollback", args = { boolean.class }),
     @Signature(type = Executor.class, method = "close", args = { boolean.class })
