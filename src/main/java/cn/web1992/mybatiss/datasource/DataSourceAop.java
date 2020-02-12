@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 @Order(-1)
 public class DataSourceAop {
     @Before("execution(* cn.web1992.mybatiss.service.*..*(..))")
-    public void setDataSource2test01(JoinPoint jp) throws NoSuchMethodException {
+    public void setDataSource(JoinPoint jp) throws NoSuchMethodException {
         MethodSignature methodSignature = (MethodSignature) jp.getSignature();
         Method method = methodSignature.getMethod();
 
