@@ -15,6 +15,14 @@
         select * from t_user where id =#{id};
     </select>
 
+    <select id="queryAll" resultType="cn.web1992.mybatiss.dal.domain.User">
+        select * from t_user
+    </select>
+
+    <select id="queryAllB" resultType="cn.web1992.mybatiss.dal.domain.User">
+        select * from t_user
+    </select>
+
     <update id="update" parameterType="cn.web1992.mybatiss.dal.domain.User">
         update  t_user set `name`=#{name} where id=#{id};
     </update>

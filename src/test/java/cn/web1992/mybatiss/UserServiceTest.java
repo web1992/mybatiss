@@ -5,6 +5,8 @@ import cn.web1992.mybatiss.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class UserServiceTest extends AbstractTest {
 
     @Autowired
@@ -44,5 +46,15 @@ public class UserServiceTest extends AbstractTest {
         user.setId("u6x");
         user.setName("test2");
         userService.updateUser(user);
+    }
+
+    /**
+     * 测试
+     */
+    @Test
+    public void queryAllTest(){
+        List<User> users = userService.queryAllUser();
+
+        System.out.println(users);
     }
 }
