@@ -6,8 +6,12 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <plugins>
-        <plugin  interceptor="cn.web1992.mybatiss.intercepror.ExecutorInterceptor"/>
-        <plugin  interceptor="cn.web1992.mybatiss.intercepror.ParameterHandlerInterceptor"/>
+        <plugin interceptor="cn.web1992.mybatiss.intercepror.ExecutorInterceptor">
+            <property name="a" value="1"/>
+        </plugin>
+        <plugin interceptor="cn.web1992.mybatiss.intercepror.ParameterHandlerInterceptor">
+            <property name="b" value="2"/>
+        </plugin>
     </plugins>
     <mappers>
         <!--<mapper class=""/>-->
