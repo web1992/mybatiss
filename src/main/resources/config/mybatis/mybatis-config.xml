@@ -2,6 +2,9 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
+        <setting name="localCacheScope" value="SESSION"/>
+        <!-- 二级缓存 默认是 true 需要在 mapper.xml 中配置 <cache/> 标签 -->
+        <setting name="cacheEnabled" value="true"/>
         <setting name="lazyLoadingEnabled" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>

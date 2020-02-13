@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 public class UserServiceTest extends AbstractTest {
 
@@ -52,7 +53,7 @@ public class UserServiceTest extends AbstractTest {
      * 测试
      */
     @Test
-    public void queryAllTest(){
+    public void queryAllTest() {
         List<User> users = userService.queryAllUser();
 
         System.out.println(users);

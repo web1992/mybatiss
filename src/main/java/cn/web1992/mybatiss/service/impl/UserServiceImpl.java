@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-//    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public int createUser(User user) {
         return userDao.add(user);
     }
@@ -55,7 +55,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> queryAllUser() {
         return userDao.queryAllB(new RowBounds(0, 3));
-//        PageHelper.startPage(1, 3);
 //        return userDao.queryAll();
     }
 }
