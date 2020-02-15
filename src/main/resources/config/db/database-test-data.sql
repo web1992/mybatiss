@@ -19,3 +19,4 @@ insert into t_user VALUES ( 'u2',  'Pato'   );
 insert into t_user VALUES ( 'u3',  'Eli'    );
 insert into t_user VALUES ( 'u4',  'Valentina'    );
 insert into t_user VALUES ( 'u5',  'Taro Yamada'    );
+insert into t_user VALUES ( 'test1',  'test1'    );

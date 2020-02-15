@@ -28,11 +28,14 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
+    @UseDataSource("embeddedDatabase")
     public int createUser(User user) {
         return userDao.add(user);
     }
 
     @Override
+    @UseDataSource("dataSourceMySQL")
+    @Transactional(rollbackFor = Exception.class)
     public int updateUser(User user) {
         return userDao.update(user);
     }
@@ -45,11 +48,16 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    @UseDataSource("embeddedDatabase")
-//    @UseDataSource("dataSourceMySQL")
+//    @UseDataSource("embeddedDatabase")
+    @UseDataSource("dataSourceMySQL")
     @Transactional(rollbackFor = Exception.class)
     public User queryUser(String id) {
         return userDao.get(id);
+    }
+
+    @Override
+    public User queryUserByName(String name) {
+        return userDao.getByName(name);
     }
 
     @Override

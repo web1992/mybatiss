@@ -18,10 +18,16 @@ public class UserServiceTest extends AbstractTest {
      */
     @Test
     public void getTest() {
-        User user = userService.queryUser("u1");
+        User user = userService.queryUser("1");
         System.out.println(user);
 
-        user = userService.queryUser("u6x");
+        user = userService.queryUser("1");
+        System.out.println(user);
+    }
+
+    @Test
+    public void getByNameTest() {
+        User user = userService.queryUserByName("test1");
         System.out.println(user);
     }
 
@@ -43,8 +49,7 @@ public class UserServiceTest extends AbstractTest {
     @Test
     public void updateTest() {
         User user = new User();
-        user.setName("6666 name");
-        user.setId("u6x");
+        user.setId("1");
         user.setName("test2");
         userService.updateUser(user);
     }

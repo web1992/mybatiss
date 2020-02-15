@@ -18,6 +18,13 @@ public interface UserDao {
 
     List<User> queryAll();
 
+    /**
+     * 使用 RowBounds 实现分页查询
+     *
+     * @param rowBounds
+     * @return
+     */
     List<User> queryAllB(RowBounds rowBounds);
 
+    User getByName(String name);
 }
