@@ -12,9 +12,13 @@
         <setting name="defaultExecutorType" value="REUSE"/>
         <!-- 匹配驼峰字段属性 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <setting name="logPrefix" value="dao."/>
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--        <setting name="logPrefix" value="dao."/>-->
+        <!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
     </settings>
+    <!--    自定义缓存-->
+    <typeAliases>
+        <typeAlias alias="redis" type="cn.web1992.mybatiss.cache.RedisCache"/>
+    </typeAliases>
     <plugins>
         <plugin interceptor="cn.web1992.mybatiss.intercepror.ExecutorInterceptor">
             <property name="a" value="1"/>
@@ -22,6 +26,7 @@
         <plugin interceptor="cn.web1992.mybatiss.intercepror.ParameterHandlerInterceptor">
             <property name="b" value="2"/>
         </plugin>
+        <plugin interceptor="cn.web1992.mybatiss.intercepror.SelectSqlInterceptor"/>
     </plugins>
     <mappers>
         <!--<mapper class=""/>-->

@@ -21,8 +21,8 @@ public class UserServiceTest extends AbstractTest {
         User user = userService.queryUser("1");
         System.out.println(user);
 
-        user = userService.queryUser("1");
-        System.out.println(user);
+//        user = userService.queryUser("1");
+//        System.out.println(user);
     }
 
     @Test
@@ -60,6 +60,7 @@ public class UserServiceTest extends AbstractTest {
     @Test
     public void queryAllTest() {
         List<User> users = userService.queryAllUser();
+         users = userService.queryAllUser();
 
         System.out.println(users);
     }
