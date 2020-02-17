@@ -23,6 +23,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *     6. 考虑读数据进行压缩(如序列化)，节约内存
  *     7. 使用 redis 中的 set NX 命令避免覆盖已经存在的 key
  *     8. 需要解决缓存删除失败，等缓存一致性问题
+ *     9. 添加数据缓存版本控制，方便缓存升级
  * </pre>
  *
  * <pre>
