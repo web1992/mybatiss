@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.web1992.mybatiss.dal.dao.PersonDao">
+
+    <select id="get" resultType="cn.web1992.mybatiss.dal.domain.Person">
+        select * from persons where person_id =#{personId};
+    </select>
+
+    <update id="update" parameterType="cn.web1992.mybatiss.dal.domain.Person">
+        update persons set first_name=#{firstName} where person_id=#{personId};
+    </update>
+
+</mapper>

@@ -14,9 +14,22 @@
 -- limitations under the License.
 --
 
-insert into t_user VALUES ( 'u1',  'Pocoyo' );
-insert into t_user VALUES ( 'u2',  'Pato'   );
-insert into t_user VALUES ( 'u3',  'Eli'    );
-insert into t_user VALUES ( 'u4',  'Valentina'    );
-insert into t_user VALUES ( 'u5',  'Taro Yamada'    );
-insert into t_user VALUES ( 'test1',  'test1'    );
+insert into t_user
+VALUES ('u1', 'Pocoyo');
+insert into t_user
+VALUES ('u2', 'Pato');
+insert into t_user
+VALUES ('u3', 'Eli');
+insert into t_user
+VALUES ('u4', 'Valentina');
+insert into t_user
+VALUES ('u5', 'Taro Yamada');
+insert into t_user
+VALUES ('test1', 'test1');
+
+insert into persons (person_id, first_name, last_name)
+VALUES (1, 'test1', 'test1');
+insert into persons (person_id, first_name, last_name)
+VALUES (2, 'test2', 'test1');
+insert into persons (person_id, first_name, last_name)
+VALUES (3, 'test3', 'test1');

@@ -1,8 +1,10 @@
 package cn.web1992.mybatiss.service.impl;
 
 import cn.web1992.mybatiss.dal.dao.UserDao;
+import cn.web1992.mybatiss.dal.domain.Person;
 import cn.web1992.mybatiss.dal.domain.User;
 import cn.web1992.mybatiss.datasource.UseDataSource;
+import cn.web1992.mybatiss.service.PersonService;
 import cn.web1992.mybatiss.service.UserService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private PersonService personService;
+
     /**
      * 使用 Spring 事务
      *
@@ -34,10 +39,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @UseDataSource("dataSourceMySQL")
+    @UseDataSource("embeddedDatabase")
     @Transactional(rollbackFor = Exception.class)
     public int updateUser(User user) {
-        return userDao.update(user);
+
+        Person person = new Person();
+        person.setPersonId(1);
+        person.setFirstName("ads");
+        try {
+            personService.updateUser(person);
+            System.out.println(personService.queryUser("1"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (true) {
+            userDao.update(user);
+            throw new RuntimeException("UUUUU");
+        }
+
+        return 0;
     }
 
     /**
@@ -48,8 +68,8 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-//    @UseDataSource("embeddedDatabase")
-    @UseDataSource("dataSourceMySQL")
+    @UseDataSource("embeddedDatabase")
+//    @UseDataSource("dataSourceMySQL")
     @Transactional(rollbackFor = Exception.class)
     public User queryUser(String id) {
         return userDao.get(id);

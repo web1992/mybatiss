@@ -12,18 +12,18 @@
 
 
     <!-- 使用Mysql -->
-    <import resource="spring-datasource.xml"/>
+    <!--<import resource="spring-datasource.xml"/>-->
 
     <!-- in-memory database and a datasource -->
     <!-- hsqldb -->
     <import resource="spring-embedded-database.xml"/>
 
     <bean id="multipleDataSource" class="cn.web1992.mybatiss.datasource.MultipleDataSource">
-        <property name="defaultTargetDataSource" ref="dataSourceMySQL"/>
+        <property name="defaultTargetDataSource" ref="embeddedDataSource"/>
         <property name="targetDataSources">
             <map>
                 <entry key="embeddedDatabase" value-ref="embeddedDataSource"/>
-                <entry key="dataSourceMySQL" value-ref="dataSourceMySQL"/>
+                <!--<entry key="dataSourceMySQL" value-ref="dataSourceMySQL"/>-->
             </map>
         </property>
     </bean>

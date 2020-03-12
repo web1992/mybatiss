@@ -1,6 +1,7 @@
 package cn.web1992.mybatiss;
 
 import cn.web1992.mybatiss.dal.domain.User;
+import cn.web1992.mybatiss.service.PersonService;
 import cn.web1992.mybatiss.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class UserServiceTest extends AbstractTest {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PersonService personService;
 
     /**
      * desc:
@@ -48,10 +52,19 @@ public class UserServiceTest extends AbstractTest {
      */
     @Test
     public void updateTest() {
+        System.out.println(userService.queryAllUser());
+
         User user = new User();
-        user.setId("1");
+        user.setId("u1");
         user.setName("test2");
-        userService.updateUser(user);
+        try {
+            userService.updateUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(userService.queryAllUser());
+        System.out.println(personService.queryUser("1"));
+
     }
 
     /**
