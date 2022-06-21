@@ -20,7 +20,7 @@
         <druid.version>1.0.18</druid.version>
         <c3p0.version>0.9.2.1</c3p0.version>
         <!-- 8.0.16 caching_sha2_password -->
-        <mysql.version>5.1.22</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <mybatis.version>3.1.0</mybatis.version>
         <cglib.version>2.2.2</cglib.version>
         <!-- mybatis-config.spring 版本 -->
